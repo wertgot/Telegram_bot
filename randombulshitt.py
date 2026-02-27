@@ -1,1 +1,3 @@
-print([x for x in '🪨📃✂️'])
+n = None
+
+print(not n)
