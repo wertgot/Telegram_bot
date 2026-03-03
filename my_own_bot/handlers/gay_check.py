@@ -40,4 +40,4 @@ async def process_no_gay_btn_click(callback: CallbackQuery):
     if callback.message.text != "Ты гей?":
         await callback.answer(text='печально(')
     else:
-        await callback.answer(text='не отнекивайся')
+        await callback.answer(text='не отнекивайся', show_alert=True)
