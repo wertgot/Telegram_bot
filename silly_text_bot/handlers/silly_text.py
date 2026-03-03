@@ -55,7 +55,11 @@ async def process_shuffle_text_btn(message: Message):
     await message.answer(text=LEXICON_RU['shuffle_text'])
 
 
-@silly_text_router.message(F.text)
+@silly_text_router.message(
+    ~F.text.in_([LEXICON_RU[btn_name] for btn_name in [
+        "gay_check_btn"
+    ]])
+)
 async def process_text(message: Message):
     logger.debug(bot_mode)
     if bot_mode[message.from_user.id] == 0 or message.from_user.id not in bot_mode:

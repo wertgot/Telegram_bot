@@ -5,7 +5,9 @@ from config.config import Config, load_config
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
+
 from handlers.silly_text import silly_text_router
+from handlers.gay_check import gay_check_router
 
 
 logger = logging.getLogger(__name__)
@@ -30,6 +32,7 @@ async def main():
     dp = Dispatcher()
 
     dp.include_router(silly_text_router)
+    dp.include_router(gay_check_router)
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
